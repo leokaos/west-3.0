@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<dataset>
+    
+    <tab_usuario id="1" nome="leo1" senha="1234" bloqueado="false"/>
+    <tab_usuario id="2" nome="leo2" senha="1234" bloqueado="false"/>
+    
+    <tab_recados id="1" descricao="Recado 1" data_entrada="2010-02-05 01:35:06.0" data_leitura="2011-10-11 17:38:13.0" id_usuario="1"/>
+    <tab_recados id="2" descricao="Recado 3" data_entrada="2010-04-13 10:40:19.0" data_leitura="2010-04-13 16:24:53.0" id_usuario="2"/>
+    <tab_recados id="3" descricao="Recado 2" data_entrada="2010-04-03 10:29:31.0" data_leitura="2010-04-13 16:23:45.0" id_usuario="1"/>
+    
+</dataset>

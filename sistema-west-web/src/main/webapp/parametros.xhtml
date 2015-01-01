@@ -1,0 +1,44 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html" xmlns:p="http://primefaces.org/ui" xmlns:c="http://java.sun.com/jsp/jstl/core">
+
+	<p:dialog id="modalParametros" header="#{msgs.outParametros}" widgetVar="parametrosDlg" modal="true" draggable="false" resizable="false" width="1000"
+		height="600">
+
+		<h:form id="formParametros" prependId="false">
+
+			<p class="subtitulo">Os parâmetros do sistema possibilitam alterar valores de controle para o sistema:</p>
+
+
+			<p:dataTable id="dataGridParametros" value="#{parametroController.modelo.parametros}" var="parametro">
+
+				<p:column headerText="#{msgs.outNome}" style="text-align:center;width:15%;">
+					<h:outputLabel value="#{parametro.nome}" />
+				</p:column>
+
+				<p:column headerText="#{msgs.outValor}">
+
+					<p:calendar value="#{parametro.valorParametro}" rendered="#{parametro.date}" showOn="button" pattern="dd/MM/yyyy" styleClass="data" locale="pt_BR"/>
+
+					<p:inputText value="#{parametro.valorParametro}" rendered="#{parametro.string}" />
+
+				</p:column>
+
+				<p:column headerText="#{msgs.outDescricao}" style="text-align:center;width:50%;">
+					<p:inputText value="#{parametro.descricao}" style="width:95%;" />
+				</p:column>
+
+				<p:column style="width:5%;text-align:center;">
+					<p:commandButton icon="save" action="#{parametroController.salvar(parametro)}" alt="#{msgs.outTitleSalvar}" update=":formParametros" />
+				</p:column>
+
+			</p:dataTable>
+
+			<br />
+
+			<p:message for="dataGridParametros" />
+
+		</h:form>
+
+	</p:dialog>
+
+</ui:composition>

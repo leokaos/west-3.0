@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<dataset>
+    
+    <tab_usuario codigo="10" nome="usuario" senha="7110eda4d09e062aa5e4a390b0a572ac0d2c0220" nivel="2" status="false" nomeCompleto="" supervisor="false" bloqueado="false" cor="255,255,255" coordenador="false" fake="false" duplica_recado="false" TELEFONE=""/>
+    
+    <tab_veiculo nome="Indicação" carrega_portaria="false"/>
+    
+    <tab_cliente codigo="1" nome="António     (MY)" telefone="69146476 res" email=""/>
+    <tab_cliente codigo="2" nome="Marcia / Salvador" telefone="2153632 res" email=""/>
+    <tab_cliente codigo="3" nome="Dona Lara" telefone="2725943 res" email=""/>
+    
+    <tab_imobiliaria codigo="1" imovel="S101" valor="85000.0" cliente="1" data_atendimento="1997-02-15 00:00:00.0" veiculo="Indicação" usuario="10" status="4" prioridade="false" acompanhado="false"/>
+    <tab_imobiliaria codigo="2" imovel="" valor="150000.0" cliente="2" data_atendimento="1997-02-17 00:00:00.0" veiculo="Indicação" usuario="10" status="4" prioridade="false" acompanhado="false"/>
+    <tab_imobiliaria codigo="3" imovel="S101" valor="85000.0" cliente="3" data_atendimento="1997-02-17 00:00:00.0" veiculo="Indicação" usuario="10" status="4" prioridade="false" acompanhado="false"/>
+    
+    <tab_historico codigo="1" usuario="10" descricao="Quer Sobr. c/ qtos no fundo  Ipiranga até 80mil" dataEntrada="1997-02-15 00:00:00.0" imobiliaria="1"/>
+    <tab_historico codigo="2" usuario="10" descricao="Mora na Lino Coutinho  apto. 2 Dorms  , mostrei apto. João Ragucci" dataEntrada="1997-02-17 00:00:00.0" imobiliaria="2"/>
+    <tab_historico codigo="3" usuario="10" descricao="Tem Sobrado na rua Gama lobo, 2 Dorms  ficou de retornar " dataEntrada="1997-02-17 00:00:00.0" imobiliaria="3"/>
+    
+</dataset>

@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>br.com.west</groupId>
+	<artifactId>sistema-west</artifactId>
+	<version>1.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<name>${parent.name}</name>
+
+	<modules>
+		<module>sistema-west-infra</module>
+		<module>sistema-west-comum</module>
+		<module>sistema-west-imob</module>
+		<module>sistema-west-web</module>
+		<module>sistema-west-ear</module>
+	</modules>
+
+	<properties>
+
+		<parent.name>Sistema West</parent.name>
+
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+		<maven.compiler.source>1.7</maven.compiler.source>
+		<maven.compiler.target>1.7</maven.compiler.target>
+
+	</properties>
+
+	<dependencyManagement>
+
+		<dependencies>
+
+			<!-- Dependências do Próprio Projeto -->
+
+			<dependency>
+				<groupId>br.com.west</groupId>
+				<artifactId>sistema-west-infra</artifactId>
+				<version>${project.version}</version>
+				<type>jar</type>
+			</dependency>
+
+			<dependency>
+				<groupId>br.com.west</groupId>
+				<artifactId>sistema-west-comum</artifactId>
+				<version>${project.version}</version>
+				<type>ejb</type>
+			</dependency>
+
+			<dependency>
+				<groupId>br.com.west</groupId>
+				<artifactId>sistema-west-imob</artifactId>
+				<version>${project.version}</version>
+				<type>ejb</type>
+			</dependency>
+
+			<dependency>
+				<groupId>br.com.west</groupId>
+				<artifactId>sistema-west-web</artifactId>
+				<version>${project.version}</version>
+				<type>war</type>
+			</dependency>
+
+			<dependency>
+				<groupId>br.com.startup</groupId>
+				<artifactId>query-builder</artifactId>
+				<version>1.0-SNAPSHOT</version>
+			</dependency>
+
+			<!-- Dependências Externas -->
+
+			<dependency>
+				<groupId>javax.persistence</groupId>
+				<artifactId>persistence-api</artifactId>
+				<version>1.0.2</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.easymock</groupId>
+				<artifactId>easymock</artifactId>
+				<version>3.2</version>
+			</dependency>
+
+			<dependency>
+				<groupId>junit</groupId>
+				<artifactId>junit</artifactId>
+				<version>4.11</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.google.guava</groupId>
+				<artifactId>guava</artifactId>
+				<version>17.0</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.apache.commons</groupId>
+				<artifactId>commons-lang3</artifactId>
+				<version>3.3.2</version>
+			</dependency>
+
+			<dependency>
+				<groupId>javax.el</groupId>
+				<artifactId>el-api</artifactId>
+				<version>2.2</version>
+			</dependency>
+
+			<dependency>
+				<groupId>de.odysseus.juel</groupId>
+				<artifactId>juel-impl</artifactId>
+				<version>2.2.7</version>
+			</dependency>
+
+			<dependency>
+				<groupId>javax.ejb</groupId>
+				<artifactId>ejb-api</artifactId>
+				<version>3.0</version>
+			</dependency>
+
+			<dependency>
+				<groupId>javax.enterprise</groupId>
+				<artifactId>cdi-api</artifactId>
+				<version>1.2</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.hibernate</groupId>
+				<artifactId>hibernate-core</artifactId>
+				<scope>provided</scope>
+				<version>4.0.0.Final</version>
+			</dependency>
+
+			<dependency>
+				<groupId>javax.validation</groupId>
+				<artifactId>validation-api</artifactId>
+				<version>1.0.0.GA</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.hibernate</groupId>
+				<artifactId>hibernate-validator</artifactId>
+				<version>4.2.0.Final</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.hibernate</groupId>
+				<artifactId>hibernate-entitymanager</artifactId>
+				<version>4.0.0.Final</version>
+			</dependency>
+
+			<dependency>
+				<groupId>javassist</groupId>
+				<artifactId>javassist</artifactId>
+				<version>3.8.0.GA</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.dbunit</groupId>
+				<artifactId>dbunit</artifactId>
+				<version>2.5.0</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.hsqldb</groupId>
+				<artifactId>hsqldb</artifactId>
+				<version>2.3.2</version>
+			</dependency>
+
+			<dependency>
+				<groupId>javax.faces</groupId>
+				<artifactId>jsf-api</artifactId>
+				<version>2.1</version>
+			</dependency>
+
+			<dependency>
+				<groupId>javax.servlet</groupId>
+				<artifactId>javax.servlet-api</artifactId>
+				<version>3.1.0</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.primefaces</groupId>
+				<artifactId>primefaces</artifactId>
+				<version>5.0</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-api</artifactId>
+				<version>1.7.7</version>
+			</dependency>
+
+			<dependency>
+				<groupId>javax.ws.rs</groupId>
+				<artifactId>jsr311-api</artifactId>
+				<version>1.1.1</version>
+			</dependency>
+
+		</dependencies>
+
+	</dependencyManagement>
+
+	<repositories>
+
+		<repository>
+			<url>http://repository.primefaces.org/</url>
+			<id>primefaces</id>
+			<layout>default</layout>
+			<name>Repository for library PrimeFaces 3.2</name>
+		</repository>
+
+	</repositories>
+
+	<build>
+
+		<pluginManagement>
+
+			<plugins>
+
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>3.1</version>
+					<configuration>
+						<source>${maven.compiler.source}</source>
+						<target>${maven.compiler.target}</target>
+					</configuration>
+				</plugin>
+
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-clean-plugin</artifactId>
+					<version>2.5</version>
+				</plugin>
+
+				<plugin>
+					<groupId>org.flywaydb</groupId>
+					<artifactId>flyway-maven-plugin</artifactId>
+					<version>3.0</version>
+					<configuration>
+						<url>jdbc:mysql://localhost:3306/west3</url>
+						<user>root</user>
+						<password>root</password>
+						<schemas>
+							<schema>west3</schema>
+						</schemas>
+						<locations>
+							<location>filesystem:/sql</location>
+						</locations>
+					</configuration>
+					<dependencies>
+						<dependency>
+							<groupId>mysql</groupId>
+							<artifactId>mysql-connector-java</artifactId>
+							<version>5.1.6</version>
+						</dependency>
+					</dependencies>
+				</plugin>
+
+			</plugins>
+
+		</pluginManagement>
+
+	</build>
+
+</project>

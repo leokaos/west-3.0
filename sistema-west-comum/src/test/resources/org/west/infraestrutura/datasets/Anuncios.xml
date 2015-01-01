@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<dataset>
+    
+    <tab_veiculo NOME="VEICULO" CARREGA_PORTARIA="false"/>
+    
+    <tab_anuncio NOME="anuncio1" INFORMACAOADICIONAL="false" liberavel="true" TRAVADO="false" USADO="true" VEICULO="VEICULO" />
+    <tab_anuncio NOME="anuncio2" INFORMACAOADICIONAL="false" liberavel="false" TRAVADO="false" USADO="true" VEICULO="VEICULO" />
+    
+</dataset>

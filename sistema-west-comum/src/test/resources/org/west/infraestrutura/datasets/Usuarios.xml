@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<dataset>
+    <tab_usuario codigo="31" nome="maura" senha="7110eda4d09e062aa5e4a390b0a572ac0d2c0220" nivel="2" status="true" nomeCompleto="" supervisor="false" bloqueado="false" cor="255,255,255" coordenador="false" fake="false" duplica_recado="false" TELEFONE=""/>
+    <tab_usuario codigo="53" nome="Garbino" senha="7110eda4d09e062aa5e4a390b0a572ac0d2c0220" nivel="1" status="true" nomeCompleto="Mauricio Garbino da Silva" supervisor="false" bloqueado="false" cor="57,126,184" coordenador="false" fake="false" duplica_recado="false" TELEFONE=""/>
+    
+    <tab_cartao usuario="53" quantidade="20"/>
+    <tab_cartao usuario="31" quantidade="10"/>
+    
+    <tab_ponto codigo="836" usuario="53" dataPonto="2011-03-28 11:28:34.0" obs="Entrada"/>
+    
+</dataset>

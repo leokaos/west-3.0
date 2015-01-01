@@ -1,0 +1,72 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html" xmlns:p="http://primefaces.org/ui">
+
+	<p:dialog id="modalRecados" header="#{msgs.outRecados}" widgetVar="recadosDlg" modal="true" draggable="false" resizable="false" width="1000" height="500">
+
+		<h:form id="formRecado" prependId="false">
+
+			<p:panelGrid style="margin-top:20px">
+
+				<p:row>
+
+					<p:column>
+						<p:dataTable value="#{sessaoController.modelo.modeloRecados}" var="recado" selection="#{sessaoController.modelo.recadoSelecionado}"
+							selectionMode="single" emptyMessage="#{msgs.outLabelSemResultado}" scrollable="true" scrollHeight="400" style="width:500px;">
+
+							<p:ajax event="rowSelect" update=":formRecado:panelDetailRecado" />
+
+							<p:column headerText="#{msgs.outDescricao}" filterBy="#{recado.descricao}" filterMatchMode="contains" >
+								<h:outputText value="#{recado.descricao}" />
+							</p:column>
+
+							<p:column headerText="#{msgs.outDataEntrada}" style="width:25%;text-align: center;">
+								<h:outputText value="#{recado.dataEntrada}">
+									<f:convertDateTime pattern="#{msgs.patternData}" />
+								</h:outputText>
+							</p:column>
+
+						</p:dataTable>
+					</p:column>
+
+					<p:column>
+						<p:panel header="#{msgs.outInformacoesRecado}" id="panelDetailRecado">
+
+							<p:panelGrid>
+
+								<p:row>
+									<p:column style="width:	30%;">
+										<h:outputLabel value="#{msgs.outDataEntrada}:" style="margin-right:20px;margin-bottom:30px;" />
+									</p:column>
+									<p:column>
+										<h:outputLabel value="#{sessaoController.modelo.recadoSelecionado.dataEntrada}">
+											<f:convertDateTime pattern="#{msgs.patternData}" />
+										</h:outputLabel>
+									</p:column>
+								</p:row>
+
+								<p:row>
+									<p:column colspan="2">
+										<h:outputLabel value="#{msgs.outDescricao}:" style="margin-top:20px;" />
+									</p:column>
+								</p:row>
+
+								<p:row>
+									<p:column colspan="2">
+										<h:inputTextarea value="#{sessaoController.modelo.recadoSelecionado.descricao}" disabled="true" style="width:100%;" rows="10" cols="75" />
+									</p:column>
+								</p:row>
+
+							</p:panelGrid>
+
+						</p:panel>
+					</p:column>
+
+				</p:row>
+
+			</p:panelGrid>
+
+		</h:form>
+
+	</p:dialog>
+
+</ui:composition>

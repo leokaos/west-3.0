@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<dataset>
+    
+    <tab_status id="1" nome="Ativo" alteravel="true" ativo="true"/>
+    <tab_status id="2" nome="Suspenso" alteravel="true" ativo="false"/>
+    <tab_status id="3" nome="Proposta" alteravel="true" ativo="false"/>
+    <tab_status id="4" nome="Vendido" alteravel="false" ativo="false"/>
+    
+</dataset>

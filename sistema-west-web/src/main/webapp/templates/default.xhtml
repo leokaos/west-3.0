@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<title>Sistema West</title>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+	<h:outputStylesheet name="css/main_style.css" />
+
+	<h:outputStylesheet name="css/font-awesome.css" />
+
+	<h:outputScript name="js/locale-primafaces.js" />
+
+	<f:loadBundle basename="br.com.west.mensagens_pt_BR" var="msgs" />
+
+</h:head>
+
+<h:body>
+
+	<div class="wrapper">
+
+		<header class="header"> <h:form id="formMenu" prependId="false">
+
+			<h:graphicImage value="/resources/images/logo_pequeno.png" style="margin-left:20px;margin-top:5px;" />
+
+			<p:menuButton value="#{msgs.outAcoes}" style="float:right;margin-right:30px;margin-top:20px;">
+
+				<p:menuitem value="#{msgs.outConfiguracoes}..." onclick="PF('configDlg').show();" />
+
+				<p:menuitem value="#{msgs.outRecados}..." oncomplete="PF('recadosDlg').show();" action="#{sessaoController.buscarRecados}" update=":modalRecados" />
+
+				<p:menuitem value="#{msgs.outParametros}..." oncomplete="PF('parametrosDlg').show();" update=":modalParametros" />
+
+				<p:separator />
+
+				<p:menuitem value="#{msgs.outSairSistema}" action="#{sessaoController.sairDoSistema}" ajax="false" update="@all" />
+
+			</p:menuButton>
+
+		</h:form> </header>
+
+		<p:dialog id="modalConfiguracoes" header="#{msgs.outConfiguracoes}" widgetVar="configDlg" modal="true" draggable="false" dynamic="true" resizable="false">
+			<h:outputText value="This is a Modal Dialog." />
+		</p:dialog>
+
+		<ui:include src="/recados.xhtml" />
+
+		<ui:include src="/parametros.xhtml" />
+
+		<main class="content">
+
+		<div class="sidebar-wrapper">
+			<ul>
+				<li class="current">
+					<a class="current" href="index.html" data-toggle="tooltip" data-placement="right" title="" data-original-title="Dashboard">
+						<i class="fa fa-dashboard menu"></i>
+					</a>
+				</li>
+				<li>
+					<a href="forms.html" data-toggle="tooltip" data-placement="right" title="" data-original-title="Forms">
+						<i class="fa fa-user menu"></i>
+					</a>
+				</li>
+				<li>
+					<a href="elements.html" data-toggle="tooltip" data-placement="right" title="" data-original-title="UI Elements">
+						<i class="fa fa-home menu"></i>
+					</a>
+				</li>
+				<li>
+					<a href="charts.html" data-toggle="tooltip" data-placement="right" title="" data-original-title="Charts">
+						<i class="fa fa-building menu"></i>
+					</a>
+				</li>
+				<li style="border: none;">
+					<a href="charts.html" data-toggle="tooltip" data-placement="right" title="" data-original-title="Charts">
+						<i class="fa fa-edit menu"></i>
+					</a>
+				</li>
+			</ul>
+		</div>
+
+		<ui:insert name="conteudo" /> </main>
+
+	</div>
+
+	<footer class="footer"> <p:outputLabel value="#{msgs.outMensagemBemVindo} #{sessaoController.modelo.usuarioLogado.usuario.nomeCompleto}!" /> </footer>
+
+</h:body>
+
+</html>

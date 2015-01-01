@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<dataset>
+    
+    <tab_bairro nome="KLABIN" cidade="São Paulo" usado="true"/>
+    
+    <tab_usuario codigo="31" nome="maura" senha="7110eda4d09e062aa5e4a390b0a572ac0d2c0220" nivel="2" status="false" nomeCompleto="" supervisor="false" bloqueado="false" cor="255,255,255" coordenador="false" fake="false" duplica_recado="false" TELEFONE=""/>
+    <tab_usuario codigo="53" nome="Garbino" senha="7110eda4d09e062aa5e4a390b0a572ac0d2c0220" nivel="2" status="false" nomeCompleto="Mauricio Garbino da Silva" supervisor="false" bloqueado="false" cor="57,126,184" coordenador="false" fake="false" duplica_recado="false" TELEFONE=""/>
+    
+    <tab_cep CEP="04116210" uf="SP" tipo="Rua" cidade="São Paulo" descricao="Garapeba"/>
+    <tab_cep CEP="04205000" uf="SP" tipo="Rua" cidade="São Paulo" descricao="Cipriano Barata"/>
+    <tab_cep CEP="04281060" uf="SP" tipo="Rua" cidade="São Paulo" descricao="Jamboacu"/>
+    
+    <tab_portaria codigo="1116" usuario="53" bairro="KLABIN" CEP="04116210" numero="241" edificio="Maison Geneve" zelador="Brandão 5081-3016" telefone="5083-5400" prioridade="false" cidade="São Paulo" porteiro="Eliseu e Francisco"/>
+    <tab_portaria codigo="1528" usuario="53" bairro="KLABIN" CEP="04281060" numero="440" edificio="Santa Marta" zelador="Raimundo" telefone="5063-1030" prioridade="false" cidade="São Paulo" porteiro="RAIMUNDO / LOURDES"/>
+    <tab_portaria codigo="1783" usuario="31" bairro="KLABIN" CEP="04205000" numero="2412" edificio="Ana Maria" zelador="Amaury" telefone="" prioridade="false" cidade="São Paulo" porteiro="Jose/bruno"/>
+    
+</dataset>

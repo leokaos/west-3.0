@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<dataset>
+    
+    <tab_cliente codigo="3000" nome="JOAO DA SILVA" telefone="" dataNascimento="2013-03-19" />
+    <tab_telefone codigo="5000" cliente="3000" tipo="Celular" telefone="12345678" descricao=""/>
+    
+    <tab_cliente codigo="4000" nome="MANE DA SILVA" telefone="12345678" dataNascimento="2013-03-19" />
+    
+</dataset>
