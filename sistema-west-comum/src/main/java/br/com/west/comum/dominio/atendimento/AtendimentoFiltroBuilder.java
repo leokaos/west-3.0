@@ -25,6 +25,14 @@ public class AtendimentoFiltroBuilder implements Builder<AtendimentoFiltro> {
 		return this;
 	}
 
+	public AtendimentoFiltroBuilder dataEntrada(final Periodo periodo) {
+
+		periodo.extremos();
+		filtro.setDataEntrada(periodo);
+
+		return this;
+	}
+
 	@Override
 	public AtendimentoFiltro build() {
 		return filtro;

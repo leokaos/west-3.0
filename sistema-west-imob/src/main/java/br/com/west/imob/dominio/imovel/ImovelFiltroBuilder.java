@@ -33,8 +33,8 @@ public class ImovelFiltroBuilder implements Builder<ImovelFiltro> {
 	}
 
 	public ImovelFiltroBuilder periodo(final Date dataInicial, final Date dataFinal) {
-		this.filtro.setPeriodo(new Periodo(dataInicial, dataFinal));
-		this.filtro.getPeriodo().extremos();
+		this.filtro.setDataAngariacao(new Periodo(dataInicial, dataFinal));
+		this.filtro.getDataAngariacao().extremos();
 		return this;
 	}
 

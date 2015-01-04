@@ -1,8 +1,6 @@
 package br.com.west.util;
 
-import java.util.Calendar;
 import java.util.Collection;
-import java.util.Date;
 
 import br.com.west.context.exception.DominioException;
 import br.com.west.context.exception.WestException;
@@ -89,31 +87,6 @@ public class ValidatorUtil {
 		if (isEmpty(str)) {
 			throw new DominioException(messageError);
 		}
-	}
-
-	public static void minimoHoraMinutoSegundo(final Date data) {
-		final Calendar calendar = Calendar.getInstance();
-		calendar.setTime(data);
-
-		calendar.set(Calendar.HOUR_OF_DAY, calendar.getMinimum(Calendar.HOUR_OF_DAY));
-		calendar.set(Calendar.MINUTE, calendar.getMinimum(Calendar.MINUTE));
-		calendar.set(Calendar.SECOND, calendar.getMinimum(Calendar.SECOND));
-		calendar.set(Calendar.MILLISECOND, calendar.getMinimum(Calendar.MILLISECOND));
-
-		data.setTime(calendar.getTimeInMillis());
-	}
-
-	public static void maximoHoraMinutoSegundo(final Date data) {
-
-		final Calendar calendar = Calendar.getInstance();
-		calendar.setTime(data);
-
-		calendar.set(Calendar.HOUR, calendar.getMaximum(Calendar.HOUR));
-		calendar.set(Calendar.MINUTE, calendar.getMaximum(Calendar.MINUTE));
-		calendar.set(Calendar.SECOND, calendar.getMaximum(Calendar.SECOND));
-		calendar.set(Calendar.MILLISECOND, calendar.getMaximum(Calendar.MILLISECOND));
-
-		data.setTime(calendar.getTimeInMillis());
 	}
 
 }

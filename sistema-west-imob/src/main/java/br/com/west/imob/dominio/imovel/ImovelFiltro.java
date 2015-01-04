@@ -1,5 +1,8 @@
 package br.com.west.imob.dominio.imovel;
 
+import static br.com.startup.query.conditions.ConditionFactory.between;
+import static br.com.west.util.ValidatorUtil.isNotNull;
+
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 
@@ -14,7 +17,7 @@ public class ImovelFiltro extends AbstractFiltro<ImovelFiltro> {
 	private static final long serialVersionUID = -8718738735854460926L;
 
 	private Usuario usuario;
-	private Periodo periodo;
+	private Periodo dataAngariacao;
 	private boolean comFoto;
 
 	public ImovelFiltro() {
@@ -29,12 +32,12 @@ public class ImovelFiltro extends AbstractFiltro<ImovelFiltro> {
 		this.usuario = usuario;
 	}
 
-	public Periodo getPeriodo() {
-		return periodo;
+	public Periodo getDataAngariacao() {
+		return dataAngariacao;
 	}
 
-	public void setPeriodo(final Periodo periodo) {
-		this.periodo = periodo;
+	public void setDataAngariacao(final Periodo dataAngariacao) {
+		this.dataAngariacao = dataAngariacao;
 	}
 
 	public boolean isComFoto() {
@@ -43,6 +46,10 @@ public class ImovelFiltro extends AbstractFiltro<ImovelFiltro> {
 
 	public void setComFoto(final boolean comFoto) {
 		this.comFoto = comFoto;
+	}
+
+	public boolean hasDataAngariacao() {
+		return isNotNull(dataAngariacao);
 	}
 
 	@Override
@@ -58,6 +65,9 @@ public class ImovelFiltro extends AbstractFiltro<ImovelFiltro> {
 	@Override
 	public void doQuery(final QueryBuilder builder) throws WestException {
 
+		if (hasDataAngariacao()) {
+			builder.where(between("dataAngariacao", dataAngariacao.getDataInicial(), dataAngariacao.getDataFinal()));
+		}
 	}
 
 	@Override

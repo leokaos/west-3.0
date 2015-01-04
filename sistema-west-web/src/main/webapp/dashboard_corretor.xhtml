@@ -3,7 +3,7 @@
 
 	<div id="dashboard">
 
-		<div style="width: 30%; float: left; margin-top: 11px; margin-left: 140px;">
+		<div style="width: 20%; float: left; margin-top: 11px; margin-left: 140px;">
 
 			<ui:repeat var="indicador" value="#{dashboardCorretorController.modelo.indicadores}">
 
@@ -27,9 +27,15 @@
 
 		</div>
 
-		<div style="width: 70%; float: left;">
-			<div class="grafico"></div>
-			<div class="grafico"></div>
+		<div style="width: 60%; float: left; margin-top: 11px;">
+			<div class="grafico">
+				<p:chart type="line" model="#{dashboardCorretorController.modelo.imovelChartModel}" style="width:80%; max-width:80%;margin: 10px auto; height: 200px;"
+					widgetVar="imovelBarChart" />
+			</div>
+			<div class="grafico">
+				<p:chart type="line" model="#{dashboardCorretorController.modelo.clienteChartModel}" style="width:80%; max-width:80%;margin: 10px auto; height: 200px;"
+					widgetVar="clienteBarChart" />
+			</div>
 		</div>
 
 	</div>

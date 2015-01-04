@@ -16,6 +16,16 @@
 
 	<f:loadBundle basename="br.com.west.mensagens_pt_BR" var="msgs" />
 
+	<h:outputScript>
+		function barExt() {
+		
+	        this.cfg.seriesDefaults = {
+	            pointLabels: {show: true}
+	        };
+	        this.cfg.stackSeries = true;
+	    }
+	</h:outputScript>
+
 </h:head>
 
 <h:body>

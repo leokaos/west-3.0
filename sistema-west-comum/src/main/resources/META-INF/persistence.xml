@@ -17,6 +17,7 @@
 		<class>br.com.west.comum.dominio.parametro.ParametroDate</class>
 		<class>br.com.west.comum.dominio.parametro.ParametroInteger</class>
 		<class>br.com.west.comum.dominio.perfil.Perfil</class>
+		<class>br.com.west.comum.dominio.atendimento.Atendimento</class>
 
 		<exclude-unlisted-classes>true</exclude-unlisted-classes>
 

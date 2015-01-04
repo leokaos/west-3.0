@@ -1,5 +1,8 @@
 package br.com.west.comum.dominio.atendimento;
 
+import static br.com.startup.query.conditions.ConditionFactory.between;
+import static br.com.west.util.ValidatorUtil.isNotNull;
+
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 
@@ -26,9 +29,16 @@ public class AtendimentoFiltro extends AbstractFiltro<AtendimentoFiltro> {
 		this.dataEntrada = dataEntrada;
 	}
 
+	public boolean hasDataEntrada() {
+		return isNotNull(dataEntrada);
+	}
+
 	@Override
 	public void doQuery(final QueryBuilder builder) throws WestException {
 
+		if (hasDataEntrada()) {
+			builder.where(between("dataEntrada", dataEntrada.getDataInicial(), dataEntrada.getDataFinal()));
+		}
 	}
 
 	@Override

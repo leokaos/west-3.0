@@ -6,8 +6,7 @@ import static br.com.west.infraestrutura.InfraestruturaMensagens.PERIODO_DATA_FI
 import static br.com.west.infraestrutura.InfraestruturaMensagens.PERIODO_DATA_INICIAL_MAIOR;
 import static br.com.west.infraestrutura.InfraestruturaMensagens.PERIODO_DATA_INICIAL_NULA;
 import static br.com.west.util.ValidatorUtil.isNotNull;
-import static br.com.west.util.ValidatorUtil.maximoHoraMinutoSegundo;
-import static br.com.west.util.ValidatorUtil.minimoHoraMinutoSegundo;
+import static java.util.Calendar.DAY_OF_MONTH;
 
 import java.util.Date;
 
@@ -16,6 +15,7 @@ import org.apache.commons.lang3.builder.HashCodeBuilder;
 
 import br.com.west.context.exception.ValidationException;
 import br.com.west.context.validationcontext.ValidationContext;
+import br.com.west.util.DataUtils;
 
 public class Periodo extends ValueObject<Periodo> {
 
@@ -24,8 +24,8 @@ public class Periodo extends ValueObject<Periodo> {
 
 	private static final long serialVersionUID = -2701173320813247466L;
 
-	private final Date dataInicial;
-	private final Date dataFinal;
+	private Date dataInicial;
+	private Date dataFinal;
 
 	public Periodo(final Date dataInicial, final Date dataFinal) {
 		super();
@@ -45,11 +45,11 @@ public class Periodo extends ValueObject<Periodo> {
 	public void extremos() {
 
 		if (isNotNull(dataInicial)) {
-			minimoHoraMinutoSegundo(dataInicial);
+			dataInicial = DataUtils.truncate(dataInicial, DAY_OF_MONTH);
 		}
 
 		if (isNotNull(dataFinal)) {
-			maximoHoraMinutoSegundo(dataFinal);
+			dataFinal = DataUtils.maximo(dataFinal, DAY_OF_MONTH);
 		}
 
 	}

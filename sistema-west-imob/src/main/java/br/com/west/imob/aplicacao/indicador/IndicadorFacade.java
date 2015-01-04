@@ -14,4 +14,8 @@ public interface IndicadorFacade extends Serializable {
 
 	List<Indicador> buscarIndicadoresPorUsuario(Usuario usuario) throws WestException;
 
+	List<Indicador> buscarHistoricoIndicadoresPorUsuarioDeClientes(Usuario usuario) throws WestException;
+
+	List<Indicador> buscarHistoricoIndicadoresPorUsuarioDeImovel(Usuario usuario) throws WestException;
+
 }

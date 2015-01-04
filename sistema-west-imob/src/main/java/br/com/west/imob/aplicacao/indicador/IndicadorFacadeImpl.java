@@ -25,4 +25,14 @@ public class IndicadorFacadeImpl implements IndicadorFacade {
 		return service.buscarIndicadoresPorUsuario(usuario);
 	}
 
+	@Override
+	public List<Indicador> buscarHistoricoIndicadoresPorUsuarioDeClientes(final Usuario usuario) throws WestException {
+		return service.buscarHistoricoIndicadoresPorUsuarioDeClientes(usuario);
+	}
+
+	@Override
+	public List<Indicador> buscarHistoricoIndicadoresPorUsuarioDeImovel(final Usuario usuario) throws WestException {
+		return service.buscarHistoricoIndicadoresPorUsuarioDeImovel(usuario);
+	}
+
 }
